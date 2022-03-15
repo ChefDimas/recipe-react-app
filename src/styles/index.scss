@@ -8,105 +8,123 @@ $text-light: #575757;
 $font-size: 16px;
 $animation-speed: 1;
 
-
-*{ 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-size: $font-size;
-    font-family: 'Roboto', sans-serif;
+body {
+  font-size: $font-size;
+  font-family: "Roboto", sans-serif;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.container{
-    padding-inline: 15vw;
+.container {
+  padding-inline: 15vw;
 }
 
-.navbar{
-    height: 55px;
-    box-shadow: 0 3px 6px $shadow-color;
-    background-color: $background-color;
-    color: $text-color;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar {
+  height: 55px;
+  box-shadow: 0 3px 6px $shadow-color;
+  background-color: $background-color;
+  color: $text-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    .logo{
-        font-size: 1.5em;
-        font-weight: bold;
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $primary-color;
+    text-shadow: 1 px 3px $shadow-color;
+
+    span {
+      color: $text-color;
+    }
+  }
+
+  .nav-links {
+    a {
+      margin-left: 4em;
+      color: $text-light;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: $primary-color;
+        bottom: -5px;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform calc($animation-speed * 0.5s) ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          transform: scaleX(1);
+        }
+      }
+
+      // style for active tab for future
+      &:active {
         color: $primary-color;
-        text-shadow: 1 px 3px $shadow-color;
-        span{
-            color: $text-color;
-        }
+        font-weight: bold;
+      }
     }
-    .nav-links{
-        a{
-            margin-left: 4em;
-            color: $text-light;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: relative;
-            &::before{
-                content: '';
-                display: inline-block;
-                position: absolute;
-                height: 3px;
-                width: 100%;
-                background-color: $primary-color;
-                bottom: -5px;
-                left: 0;
-                transform: scaleX(0);
-                transition: transform calc($animation-speed * 0.5s) ease-in-out;
-            }
-            &:hover{
-                &::before{
-                    transform: scaleX(1);
-                }
-            }
+  }
 
-            // style for active tab for future
-            &:active{
-                color: $primary-color;
-                font-weight: bold;
-            }
-        }
+  .sidebar-btn {
+    height: 28px;
+    width: 30px;
+    position: relative;
+
+    .bar {
+      border-radius: 5px;
+      height: 6px;
+      width: 100%;
+      background-color: $text-color;
+      position: absolute;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform-origin: right;
+        transform: scaleX(0.8) translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        transform-origin: right;
+        top: 100%;
+        transform: scaleX(1.1) translateY(-100%);
+      }
     }
 
-    .sidebar-btn{
-         height: 28px;
-         width: 30px;
-         position: relative;
-         .bar{
-             border-radius: 5px;
-             height: 6px;
-             width: 100%;
-             background-color: $text-color;
-             position: absolute;
-             &:nth-child(1){
-                 top: 0;
-             }
-             &:nth-child(2){
-                top: 50%;
-                transform-origin: right;
-                transform: scaleX(.8) translateY(-50%);
-            }
-            &:nth-child(3){
-                transform-origin: right;
-                top: 100%;
-                transform: scaleX(1.1) translateY(-100%);
-            }
-         }
-    }
-    
+    // &:active {
+    //   .bar {
+    //     transform-origin: center;
+    //     top: 50%;
+    //     &:nth-child(1) {
+    //       transform: translate(0, -50%) scale(1) rotate(45deg);
+    //     }
+    //     &:nth-child(2) {
+    //       transform: scaleX(0) translateY(-50%);
+    //     }
+    //     &:nth-child(3) {
+    //       transform: translateY(0, -50%) scale(1) rotate(-45deg);
+    //     }
+    //   }
+    // }
+  }
 }
-
-
-
-

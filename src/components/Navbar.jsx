@@ -1,3 +1,5 @@
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Navbar() {
   return (
     <div className="navbar container">
@@ -14,6 +16,7 @@ export default function Navbar() {
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
+      {/* <FontAwesomeIcon icon="fa-solid fa-xmark" /> */}
     </div>
   );
 }
